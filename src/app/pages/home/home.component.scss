@@ -1,0 +1,17 @@
+.center-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.iniciar {
+    background-color: #2d2de9;
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50px;
+    color: white;
+    padding: 5px 20px;
+}

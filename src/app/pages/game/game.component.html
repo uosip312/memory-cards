@@ -1,1 +1,11 @@
-<p>game works!</p>
+<h1>Memoriza los Números</h1>
+<h2 *ngIf="numeroSeleccionado">Donde esta el número: {{numeroSeleccionado}}?</h2>
+<div class="center-container">
+    <div class="pad-numerico">
+        <div *ngFor="let numero of arregloAleatorio; index as indice" class="numero"
+         (click)="adivinarNumero(indice, numero)">{{numero}}</div>
+    </div>
+</div>
+<div class="center-container">
+    <button class="jugar" (click)="jugar(arregloSize)">Jugar</button>
+</div>
