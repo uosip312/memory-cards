@@ -19,6 +19,7 @@ export class NumberListComponent implements OnChanges {
     const iniciarJuego = arregloNumeros.previousValue != arregloNumeros.currentValue;
     if(iniciarJuego) {
       this.mostrarNumero = true;
+      this.indexNumeroClickeado = null;
       this.iniciarSeleccionNumero(this.arregloNumeros.length)
     };
   }
