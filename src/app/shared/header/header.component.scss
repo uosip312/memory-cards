@@ -1,0 +1,34 @@
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #2d2de9;
+    color: #fff;
+}
+  
+.left-section {
+    display: flex;
+    align-items: center;
+}
+  
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.jugador {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+label {
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: larger;
+}
+  
+select {
+    padding: 5px;
+    margin-right: 10px;
+}

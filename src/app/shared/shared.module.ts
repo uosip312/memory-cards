@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NumberListComponent } from './number-list/number-list.component';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    NumberListComponent
+    NumberListComponent,
+    HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
-    NumberListComponent
+    NumberListComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

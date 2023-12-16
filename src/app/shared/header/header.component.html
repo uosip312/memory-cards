@@ -1,0 +1,11 @@
+<nav class="header-nav">
+    <div class="left-section">
+        <span class="jugador">{{jugador}}</span>
+    </div>
+    <div class="right-section">
+    <label>Nivel:</label>
+      <select [(ngModel)]="nivel">
+        <option *ngFor="let nivel of listaNiveles" [value]="nivel.valor">{{nivel.texto}}</option>
+      </select>
+    </div>
+</nav>
