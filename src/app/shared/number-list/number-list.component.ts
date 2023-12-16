@@ -1,18 +1,25 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { GameService } from 'src/app/services/game.service';
 
 @Component({
   selector: 'app-number-list',
   templateUrl: './number-list.component.html',
   styleUrls: ['./number-list.component.scss']
 })
-export class NumberListComponent implements OnChanges {
+export class NumberListComponent implements OnInit, OnChanges {
   @Input() arregloNumeros: number[] = [];
   @Output() elegirNumeroParaAdivinar = new EventEmitter<number>();
   public indexNumeroClickeado: number | null = null;
   public numeroParaAdivinar: number | null = null;
   public mostrarNumero: boolean = true;
 
-  constructor() { }
+  constructor(
+    private gameSvc: GameService
+  ) { }
+
+  ngOnInit(): void {
+    this.gameSvc.numeroParaAdivinar$.subscribe((numero: number) => this.numeroParaAdivinar = numero);
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     const arregloNumeros = changes['arregloNumeros'];
@@ -24,15 +31,9 @@ export class NumberListComponent implements OnChanges {
     };
   }
 
-  private seleccionarNumeroAleatorio(arregloSize: number) {
-    const indiceNumero = Math.floor( Math.random() * arregloSize );
-    this.numeroParaAdivinar = this.arregloNumeros[indiceNumero];
-    this.elegirNumeroParaAdivinar.emit(this.numeroParaAdivinar);
-  }
-
   private iniciarSeleccionNumero(arregloSize: number) {
     setTimeout(() => {
-      this.seleccionarNumeroAleatorio(arregloSize);
+      this.gameSvc.seleccionarNumeroAleatorio(arregloSize);
       this.mostrarNumero = false;
     }, 2000);
   }
