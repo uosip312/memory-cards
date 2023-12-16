@@ -12,6 +12,7 @@ export class NumberListComponent implements OnInit, OnChanges {
   public indexNumeroClickeado: number | null = null;
   public numeroParaAdivinar: number | null = null;
   public mostrarNumero: boolean = true;
+  public inhabilitarClick: boolean = true;
 
   constructor(
     private gameSvc: GameService
@@ -35,12 +36,14 @@ export class NumberListComponent implements OnInit, OnChanges {
     setTimeout(() => {
       this.gameSvc.seleccionarNumeroAleatorio(arregloSize);
       this.mostrarNumero = false;
+      this.inhabilitarClick = false;
     }, 2000);
   }
 
   onNumeroClick(indice: number, numero: number) {
-    console.warn(indice + ': ' + numero);
     this.indexNumeroClickeado = indice;
+    this.gameSvc.calcularPuntuacion(numero);
+    this.inhabilitarClick = true;
   }
 
 }

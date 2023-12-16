@@ -1,6 +1,7 @@
 <ul class="pad-numerico">
     <li *ngFor="let numero of arregloNumeros; index as indice" 
         class="numero"
+        [class.numeros-inhabilitados]="inhabilitarClick"
         [class.numero-acertado]="numero === numeroParaAdivinar && indice === indexNumeroClickeado"
         [class.numero-fallado]="numero !== numeroParaAdivinar && indice === indexNumeroClickeado"
         (click)="onNumeroClick(indice, numero)"

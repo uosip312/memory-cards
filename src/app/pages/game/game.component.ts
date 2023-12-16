@@ -19,6 +19,7 @@ export class GameComponent implements OnInit {
   ngOnInit(): void {
     this.gameSvc.numeroParaAdivinar$.subscribe((numero: number) => this.numeroParaAdivinar = numero);
     this.gameSvc.arregloNumeros$.subscribe((arreglo: number[]) => this.arregloNumeros = arreglo);
+    this.gameSvc.puntuacion$.subscribe((puntos: number) => this.puntos = puntos);
   }
 
   public jugar(size: number) {

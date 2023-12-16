@@ -6,11 +6,12 @@ import { Observable, Subject } from 'rxjs';
 })
 export class GameService {
   private arregloNumeros!: number[];
-  private numeroParaAdivinar!: number;
+  private numeroParaAdivinar: number | undefined;
   public arregloSize: number = 0;
+  public puntos: number = 0;
   public numeroParaAdivinar$: Subject<number> = new Subject();
   public arregloNumeros$: Subject<number[]> = new Subject();
-  public puntos: number = 0;
+  public puntuacion$: Subject<number> = new Subject();
 
   constructor() { }
 
@@ -34,6 +35,22 @@ export class GameService {
     const indiceNumero = Math.floor( Math.random() * arregloSize );
     this.numeroParaAdivinar = this.arregloNumeros[indiceNumero];
     this.numeroParaAdivinar$.next(this.numeroParaAdivinar);
+  }
+
+  public calcularPuntuacion(numeroClickeado: number) {
+    const acertado = this.numeroParaAdivinar === numeroClickeado;
+    if(acertado) {
+      this.puntos += 1;
+      this.puntuacion$.next(this.puntos);
+    } else {
+      this.reiniciarPuntos();
+    }
+  }
+
+  public reiniciarPuntos() {
+    this.puntos = 0;
+    this.puntuacion$.next(this.puntos);
+    navigator.vibrate(500)
   }
 
 }
