@@ -1,0 +1,6 @@
+<ul class="pad-numerico">
+    <li *ngFor="let numero of numeros; index as indice" 
+        class="numero"
+        (click)="onNumeroClick(indice, numero)"
+    >{{numero}}</li>
+</ul>

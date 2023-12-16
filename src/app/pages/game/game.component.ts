@@ -45,16 +45,7 @@ export class GameComponent implements OnInit {
       numeroClass.forEach((numero) => {
         numero.textContent = '?';
       })
-    }, 10000);
-  }
-
-  public adivinarNumero(indice: number, numero: number) {
-    console.warn(indice + ': ' + numero);
-    if(numero == this.numeroSeleccionado){
-      alert('Ganaste!');
-    } else {
-      alert('Intenta de nuevo')
-    }
+    }, 2000);
   }
 
   public jugar(size: number) {
