@@ -8,12 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class GameComponent implements OnInit {
   public arregloAleatorio: number[] = []
   public arregloSize: number = 9;
-  public numeroSeleccionado: number | null = null;
+  public numeroParaAdivinar: number | null = null;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.jugar(this.arregloSize);
+    // this.jugar(this.arregloSize);
   }
 
   private generarNumerosAleatorios(size: number): number[] {
@@ -32,26 +32,14 @@ export class GameComponent implements OnInit {
     return arregloAleatorio;
   }
 
-  private seleccionarNumeroAleatorio(arregloSize: number) {
-    const indiceNumero = Math.floor( Math.random() * arregloSize );
-    this.numeroSeleccionado = this.arregloAleatorio[indiceNumero];
-  }
-
-  private iniciarSeleccionNumero(arregloSize: number) {
-    setTimeout(() => {
-      this.seleccionarNumeroAleatorio(arregloSize);
-      
-      let numeroClass = document.querySelectorAll('.numero');
-      numeroClass.forEach((numero) => {
-        numero.textContent = '?';
-      })
-    }, 2000);
+  elegirNumeroParaAdivinar(numero: number){
+    this.numeroParaAdivinar = numero;
   }
 
   public jugar(size: number) {
     this.arregloAleatorio = this.generarNumerosAleatorios(size);
+    this.numeroParaAdivinar = null;
     console.table(this.arregloAleatorio);
-    this.iniciarSeleccionNumero(size);
   }
 
 }

@@ -1,11 +1,17 @@
 <h1>Memoriza los Números</h1>
-<h2 *ngIf="numeroSeleccionado">¿Dónde está el número: {{numeroSeleccionado}}?</h2>
-<div class="center-container">
-    <app-number-list 
-        [numeros]="arregloAleatorio" 
-        [numeroSeleccionado]="numeroSeleccionado" 
-    ></app-number-list>
+<div *ngIf="(arregloAleatorio.length >= 1) else iniciarJuego">
+    <h2 *ngIf="numeroParaAdivinar">¿Dónde está el número: {{numeroParaAdivinar}}?</h2>
+    <div class="center-container">
+        <app-number-list 
+            [arregloNumeros]="arregloAleatorio"
+            (elegirNumeroParaAdivinar)="elegirNumeroParaAdivinar($event)"
+        ></app-number-list>
 </div>
+</div>
+<ng-template #iniciarJuego>
+    <h2>Haz click en el botón Jugar para iniciar la partida</h2>
+</ng-template>
+
 <div class="center-container">
     <button class="jugar" (click)="jugar(arregloSize)">Jugar</button>
 </div>
