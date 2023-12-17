@@ -8,15 +8,16 @@ import { Nivel } from '../utils/nivel.interface';
 export class GameService {
   private arregloNumeros!: number[];
   private numeroParaAdivinar: number | null = null;
-  public arregloSize: number = 9;
   private puntos: number = 0;
   private _nivel!: Nivel;
+  public arregloSize: number = 9;
   public numeroParaAdivinar$: Subject<number | null> = new Subject();
   public arregloNumeros$: Subject<number[]> = new Subject();
   public puntuacion$: Subject<number> = new Subject();
   public nivel$: Subject<Nivel> = new Subject();
   public tiempoRestante: number = 0;
   public conteoRegresivo$: Subject<number> = new Subject();
+  private jugador: string = '';
 
   constructor() { }
 
@@ -77,6 +78,14 @@ export class GameService {
 
   get nivel(): Nivel {
     return this._nivel;
+  }
+
+  set nombreJugador(nombre: string) {
+    this.jugador = nombre;
+  }
+  
+  get nombreJugador(): string {
+    return this.jugador;
   }
   
   iniciarConteoRegresivo() {

@@ -9,7 +9,7 @@ import { Nivel } from 'src/app/utils/nivel.interface';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public jugador: string = 'Edison';
+  public jugador: string = '';
   public listaNiveles: Nivel[] = Niveles;
   public nivel!: any;
 
@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.jugador = this.gameSvc.nombreJugador;
   }
 
   onNivelSeleccionado(event: any) {

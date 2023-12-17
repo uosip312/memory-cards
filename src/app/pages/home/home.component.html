@@ -1,3 +1,10 @@
-<div class="center-container">
-    <button class="iniciar" (click)="iniciar()">Iniciar</button>
+<div class="container">
+    <form (ngSubmit)="iniciar()" #jugadorForm="ngForm" class="form-container">
+        <label for="jugador" class="form-label">Nombre Jugador:</label>
+        <input 
+            type="text" name="jugador" id="jugador" class="form-input"
+            [(ngModel)]="jugador" required #jugadorName="ngModel"
+        />
+        <button class="submit" type="submit" [disabled]="jugadorName.invalid">Iniciar</button>
+    </form>
 </div>
