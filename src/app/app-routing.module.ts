@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GameGuard } from './utils/game.guard';
 
 const routes: Routes = 
 [
@@ -14,7 +15,8 @@ const routes: Routes =
   },
   {
     path: 'game',
-    loadChildren: () => import('./pages/game/game.module').then(m => m.GameModule)
+    loadChildren: () => import('./pages/game/game.module').then(m => m.GameModule),
+    canActivate: [GameGuard]
   },
   {
     path: '**',
