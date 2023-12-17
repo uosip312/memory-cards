@@ -1,5 +1,5 @@
 export interface Nivel {
-    valor: string;
+    id: number;
     texto: string;
     tiempo: number;
     puntos: number;
