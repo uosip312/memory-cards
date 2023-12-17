@@ -31,6 +31,7 @@ export class NumberListComponent implements OnInit, OnChanges {
       this.nivel = this.gameSvc.nivel;
       this.mostrarNumero = true;
       this.indexNumeroClickeado = null;
+      this.gameSvc.iniciarConteoRegresivo();
       this.iniciarSeleccionNumero(this.arregloNumeros.length)
     };
   }

@@ -15,6 +15,8 @@ export class GameService {
   public arregloNumeros$: Subject<number[]> = new Subject();
   public puntuacion$: Subject<number> = new Subject();
   public nivel$: Subject<Nivel> = new Subject();
+  public tiempoRestante: number = 0;
+  public conteoRegresivo$: Subject<number> = new Subject();
 
   constructor() { }
 
@@ -75,6 +77,18 @@ export class GameService {
 
   get nivel(): Nivel {
     return this._nivel;
+  }
+  
+  iniciarConteoRegresivo() {
+    this.tiempoRestante = this.nivel.tiempo / 1000;
+    const contar = () => {
+      this.tiempoRestante--;
+      this.conteoRegresivo$.next(this.tiempoRestante);
+      if (this.tiempoRestante > 0) {
+        setTimeout(contar, 1000);
+      }
+    };
+    setTimeout(contar, 1000);
   }
 
 }

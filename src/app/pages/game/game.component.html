@@ -2,6 +2,10 @@
 <h1>Memoriza los Números</h1>
 <div *ngIf="(arregloNumeros.length >= 1) else iniciarJuego">
     <p class="puntos">Puntos: <span>{{puntos}}</span></p>
+    <p class="conteo"*ngIf="!numeroParaAdivinar">
+        Tiempo restante: 
+        <span>{{ tiempoRestante | number: "2.0-0" }}</span>s
+    </p>
     <h2 *ngIf="numeroParaAdivinar">¿Dónde está el número: {{numeroParaAdivinar}}?</h2>
     <div class="center-container">
         <app-number-list 
