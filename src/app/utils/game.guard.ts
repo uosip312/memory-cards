@@ -14,8 +14,8 @@ export class GameGuard implements CanActivate {
   ) {}
 
   canActivate( ): boolean {
-    this.gameSvc.nombreJugador$.subscribe((nombre: string) => this.nombreJugador = nombre);
-    if(this.nombreJugador !== '' && this.nombreJugador !== null) {
+    this.nombreJugador = this.gameSvc.nombreJugador;
+    if(this.nombreJugador == 'null') {
       this.router.navigate(['/home']);
     }
     return true;
