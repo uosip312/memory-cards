@@ -15,6 +15,7 @@ export class NumberListComponent implements OnInit, OnChanges {
   public mostrarNumero: boolean = true;
   public inhabilitarClick: boolean = true;
   public nivel!: Nivel;
+  public clasePadNumerico: string = '';
 
   constructor(
     private gameSvc: GameService
@@ -29,6 +30,7 @@ export class NumberListComponent implements OnInit, OnChanges {
     const iniciarJuego = arregloNumeros.previousValue != arregloNumeros.currentValue;
     if(iniciarJuego) {
       this.nivel = this.gameSvc.nivel;
+      this.clasePadNumerico = '';
       this.mostrarNumero = true;
       this.indexNumeroClickeado = null;
       this.gameSvc.iniciarConteoRegresivo();
@@ -46,6 +48,7 @@ export class NumberListComponent implements OnInit, OnChanges {
 
   onNumeroClick(indice: number, numero: number) {
     this.indexNumeroClickeado = indice;
+    this.clasePadNumerico = (this.numeroParaAdivinar == numero) ? 'pad-acertado' : 'pad-fallado';
     this.gameSvc.calcularPuntuacion(numero);
     this.inhabilitarClick = true;
   }

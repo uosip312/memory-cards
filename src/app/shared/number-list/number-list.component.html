@@ -1,4 +1,4 @@
-<ul class="pad-numerico">
+<ul class="pad-numerico" [class]="clasePadNumerico">
     <li *ngFor="let numero of arregloNumeros; index as indice" 
         class="numero"
         [class.numeros-inhabilitados]="inhabilitarClick"

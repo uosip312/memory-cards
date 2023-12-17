@@ -7,6 +7,14 @@
     border-radius: 25px;
 }
 
+.pad-acertado {
+    border: 5px solid #00ff00 !important;
+}
+  
+.pad-fallado {
+    border: 5px solid #ff0000 !important;
+ }
+
 .numero {
     display: flex;
     align-items: center;
@@ -33,10 +41,10 @@
   
 .numero-fallado {
     background-color: #ffaaaa !important;
- }
+}
 
- .numeros-inhabilitados {
+.numeros-inhabilitados {
     pointer-events: none;
     opacity: 0.6;
     cursor: not-allowed;
- }
+}
