@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
+import { Nivel } from '../utils/nivel.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameService {
   private arregloNumeros!: number[];
-  private numeroParaAdivinar: number | undefined;
-  public arregloSize: number = 0;
-  public puntos: number = 0;
-  public numeroParaAdivinar$: Subject<number> = new Subject();
+  private numeroParaAdivinar: number | null = null;
+  public arregloSize: number = 9;
+  private puntos: number = 0;
+  private _nivel!: Nivel;
+  public numeroParaAdivinar$: Subject<number | null> = new Subject();
   public arregloNumeros$: Subject<number[]> = new Subject();
   public puntuacion$: Subject<number> = new Subject();
+  public nivel$: Subject<Nivel> = new Subject();
 
   constructor() { }
 
@@ -40,7 +43,7 @@ export class GameService {
   public calcularPuntuacion(numeroClickeado: number) {
     const acertado = this.numeroParaAdivinar === numeroClickeado;
     if(acertado) {
-      this.puntos += 1;
+      this.puntos += this._nivel.puntos;
       this.puntuacion$.next(this.puntos);
     } else {
       this.reiniciarPuntos();
@@ -51,6 +54,27 @@ export class GameService {
     this.puntos = 0;
     this.puntuacion$.next(this.puntos);
     navigator.vibrate(500)
+  }
+
+  public iniciarJuego() {
+    this.arregloNumeros$.next(new Array);
+    this.generarNumerosAleatorios(this.arregloSize);
+    this.numeroParaAdivinar$.next(null);
+  }
+
+  public reiniciarJuego() {
+    this.puntuacion$.next(0);
+    this.arregloNumeros$.next(new Array);
+    this.numeroParaAdivinar$.next(null);
+  }
+
+  set nivel(nivel: any) {
+    this._nivel = nivel;
+    this.nivel$.next(this._nivel);
+  }
+
+  get nivel(): Nivel {
+    return this._nivel;
   }
 
 }

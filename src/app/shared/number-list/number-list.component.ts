@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { GameService } from 'src/app/services/game.service';
+import { Nivel } from 'src/app/utils/nivel.interface';
 
 @Component({
   selector: 'app-number-list',
@@ -13,19 +14,21 @@ export class NumberListComponent implements OnInit, OnChanges {
   public numeroParaAdivinar: number | null = null;
   public mostrarNumero: boolean = true;
   public inhabilitarClick: boolean = true;
+  public nivel!: Nivel;
 
   constructor(
     private gameSvc: GameService
   ) { }
 
   ngOnInit(): void {
-    this.gameSvc.numeroParaAdivinar$.subscribe((numero: number) => this.numeroParaAdivinar = numero);
+    this.gameSvc.numeroParaAdivinar$.subscribe((numero: number | null) => this.numeroParaAdivinar = numero);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     const arregloNumeros = changes['arregloNumeros'];
     const iniciarJuego = arregloNumeros.previousValue != arregloNumeros.currentValue;
     if(iniciarJuego) {
+      this.nivel = this.gameSvc.nivel;
       this.mostrarNumero = true;
       this.indexNumeroClickeado = null;
       this.iniciarSeleccionNumero(this.arregloNumeros.length)
@@ -37,7 +40,7 @@ export class NumberListComponent implements OnInit, OnChanges {
       this.gameSvc.seleccionarNumeroAleatorio(arregloSize);
       this.mostrarNumero = false;
       this.inhabilitarClick = false;
-    }, 2000);
+    }, this.nivel.tiempo);
   }
 
   onNumeroClick(indice: number, numero: number) {

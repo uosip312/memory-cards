@@ -4,8 +4,9 @@
     </div>
     <div class="right-section">
     <label>Nivel:</label>
-      <select [(ngModel)]="nivel">
-        <option *ngFor="let nivel of listaNiveles" [value]="nivel.valor">{{nivel.texto}}</option>
+      <select (change)="onNivelSeleccionado($event.target)">
+        <option value="">Elegir</option>
+        <option *ngFor="let nivel of listaNiveles" [value]="nivel.id">{{nivel.texto}}</option>
       </select>
     </div>
 </nav>
