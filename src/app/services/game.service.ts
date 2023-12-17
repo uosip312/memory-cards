@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Nivel } from '../utils/nivel.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,9 @@ export class GameService {
   public conteoRegresivo$: Subject<number> = new Subject();
   public nombreJugador$: Subject<string> = new Subject();
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   public generarNumerosAleatorios(size: number) {
     //crear un arreglo de numeros consecutivos
@@ -69,6 +72,12 @@ export class GameService {
     this.puntuacion$.next(0);
     this.arregloNumeros$.next(new Array);
     this.numeroParaAdivinar$.next(null);
+  }
+
+  public cerrarJuego() {
+    sessionStorage.removeItem('jugador');
+    this.router.navigate(['/home']);
+    this.reiniciarJuego();
   }
 
   set nivel(nivel: any) {

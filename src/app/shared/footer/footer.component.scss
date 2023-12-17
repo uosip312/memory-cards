@@ -1,0 +1,32 @@
+.footer {
+    display: flex;
+    background-color: #2d2de9;
+    color: #fff;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+  
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.salir {
+    background-color: #ffffff;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    color: #ff0000;
+    padding: 5px 20px;
+    font-weight: 600;
+}
