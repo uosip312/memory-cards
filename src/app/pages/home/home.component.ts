@@ -17,6 +17,6 @@ export class HomeComponent{
 
   iniciar() {
     this.gameSvc.nombreJugador = this.jugador;
-    this.route.navigateByUrl('/game');
+    this.route.navigate(['/game']);
   }
 }

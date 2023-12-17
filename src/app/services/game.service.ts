@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Nivel } from '../utils/nivel.interface';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class GameService {
   public nivel$: Subject<Nivel> = new Subject();
   public tiempoRestante: number = 0;
   public conteoRegresivo$: Subject<number> = new Subject();
-  private jugador: string = '';
+  public nombreJugador$: Subject<string> = new Subject();
 
   constructor() { }
 
@@ -81,13 +81,14 @@ export class GameService {
   }
 
   set nombreJugador(nombre: string) {
-    this.jugador = nombre;
+    sessionStorage.setItem('jugador', nombre);
+    this.nombreJugador$.next(nombre);
   }
-  
+
   get nombreJugador(): string {
-    return this.jugador;
+    return String(sessionStorage.getItem('jugador')) || '';
   }
-  
+
   iniciarConteoRegresivo() {
     this.tiempoRestante = this.nivel.tiempo / 1000;
     const contar = () => {

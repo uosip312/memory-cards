@@ -14,10 +14,10 @@ export class GameGuard implements CanActivate {
   ) {}
 
   canActivate( ): boolean {
-      this.nombreJugador = this.gameSvc.nombreJugador;
-      if(!this.nombreJugador) {
-        this.router.navigate(['/home']);
-      }
+    this.gameSvc.nombreJugador$.subscribe((nombre: string) => this.nombreJugador = nombre);
+    if(this.nombreJugador !== '' && this.nombreJugador !== null) {
+      this.router.navigate(['/home']);
+    }
     return true;
   }
   
