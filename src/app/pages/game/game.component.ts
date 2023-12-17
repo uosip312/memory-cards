@@ -33,7 +33,6 @@ export class GameComponent implements OnInit {
 
   public jugar() {
     this.gameSvc.iniciarJuego();
-    console.table(this.arregloNumeros);
   }
 
 }
