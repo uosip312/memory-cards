@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 import { Nivel } from '../utils/nivel.interface';
 import { Router } from '@angular/router';
 
@@ -7,10 +7,10 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class GameService {
-  private arregloNumeros!: number[];
-  private numeroParaAdivinar: number | null = null;
-  private puntos: number = 0;
-  private _nivel!: Nivel;
+  public arregloNumeros!: number[];
+  public numeroParaAdivinar: number | null = null;
+  public puntos: number = 0;
+  public _nivel!: Nivel;
   public arregloSize: number = 9;
   public numeroParaAdivinar$: Subject<number | null> = new Subject();
   public arregloNumeros$: Subject<number[]> = new Subject();
