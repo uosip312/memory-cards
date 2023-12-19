@@ -1,27 +1,70 @@
-# MemoryCards
+# Juego Memory Cards 🧠
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.10.
+<img src="https://github.com/uosip312/memory-cards/assets/52187478/ad147d06-647f-4da9-9c07-a979e99bc76d" alt="Logo Memory Cards ED" width="200"/>
 
-## Development server
+¡Bienvenido a Memory Cards, la aplicación de juego de cartas para mejorar tu memoria!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📄Descripción del Proyecto
+Aplicación móvil web progresiva basada en el juego de “Memory Cards”. En el cual debes memorizas 9 numeros y pasado cierto tiempo debes recordar donde está posicionado el numero por el cual se pregunte.
 
-## Code scaffolding
+[DEMO](https://uosip312.github.io/memory-cards/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- `Home`: Pantalla inicial donde debes colocar tu nombre y presionar el boton Iniciar.
+- `Game`: Antes de comenzar a jugar debes elegir un nivel en la parte superior, y hacer click en el botón jugar, se mostraran una serie de numeros que debes memorizar, estos numeros se ocultaran dependiendo en el nivel que hayas elegido previamente y tendras que adivinar donde se oculta el numero por el que se pregunta, si aciertas irás acumulando puntos (basados en el nivel seleccionado), sino aciertas se reinicia la puntuacion y el juego.
 
-## Build
+| Nivel | Tiempo | Puntos |
+| ----- | ------ | ------ |
+| Bajo  | 10s    | 10     |
+| Medio | 5s     | 20     |
+| Alto  | 2s     | 30     |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 📋Requisitos Previos
+Asegúrate de tener instalados los siguientes elementos en tu sistema:
 
-## Running unit tests
+- [Node.js](https://nodejs.org/) (versión 20.x o superior)
+- [NPM](https://www.npmjs.com/) (viene con Node.js, pero asegúrate de tener la última versión)
+- [Angular CLI](https://angular.io/cli) version 14.2.10 (instálalo globalmente usando npm install -g @angular/cli)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 🔧Instalación
+Ejecuta los siguientes pasos:
 
-## Running end-to-end tests
+1. **Clona el repositorio:**
+```
+git clone https://github.com/uosip312/memory-cards.git
+```
+2. **Accede al directorio del proyecto clonado:**
+```
+cd memory-cards
+```
+3. **Instala las dependencias:**
+```
+npm install
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 💻Ejecución de la aplicación
+1. **Inicia la aplicación:**
+```
+ng serve
+```
+2. **Accede a la aplicación:**
+Abre tu navegador web y visita [http://localhost:4200/](http://localhost:4200/)
 
-## Further help
+## 🔨Desplegue del proyecto
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Si deseas construir el proyecto para producción, utiliza el siguiente comando:
+```
+ng build
+```
+Esto generará una carpeta `dist/` que contiene los archivos optimizados para producción.
+
+## ⚙️Ejecución de pruebas
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+```
+ng test
+```
+
+## 🛠️Construido con:
+- [Angular](https://angular.io/) Framework para aplicaciones web
+- [NPM](https://www.npmjs.com/) Sistema de gestión de paquetes
+- [Jasmine](https://jasmine.github.io/) Framwork de pruebas para JavaScript
+- [Karma](https://karma-runner.github.io/) Ejecutor de pruebas para JavaScript
