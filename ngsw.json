@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1702987832436,
+  "timestamp": 1703009000449,
   "index": "https://uosip312.github.io/memory-cards/index.html",
   "assetGroups": [
     {
@@ -12,26 +12,8 @@
       },
       "urls": [
         "https://uosip312.github.io/memory-cards/433.7474ea70d1dc5a96.js",
-        "https://uosip312.github.io/memory-cards/677.500377b1d76455de.js",
+        "https://uosip312.github.io/memory-cards/677.c9b0e19f87a58ef3.js",
         "https://uosip312.github.io/memory-cards/698.f547f6f5de39a82f.js",
-        "https://uosip312.github.io/memory-cards/favicon.ico",
-        "https://uosip312.github.io/memory-cards/index.html",
-        "https://uosip312.github.io/memory-cards/main.39177e45e3ef874c.js",
-        "https://uosip312.github.io/memory-cards/manifest.webmanifest",
-        "https://uosip312.github.io/memory-cards/polyfills.ee2ea2a7b10bd20b.js",
-        "https://uosip312.github.io/memory-cards/runtime.5a03caccf09949f6.js",
-        "https://uosip312.github.io/memory-cards/styles.a3e19d0ca5e9ef59.css"
-      ],
-      "patterns": []
-    },
-    {
-      "name": "assets",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
-      "cacheQueryOptions": {
-        "ignoreVary": true
-      },
-      "urls": [
         "https://uosip312.github.io/memory-cards/assets/favicon/android-chrome-192x192.png",
         "https://uosip312.github.io/memory-cards/assets/favicon/android-chrome-512x512.png",
         "https://uosip312.github.io/memory-cards/assets/favicon/apple-touch-icon.png",
@@ -49,15 +31,32 @@
         "https://uosip312.github.io/memory-cards/assets/icons/icon-384x384.png",
         "https://uosip312.github.io/memory-cards/assets/icons/icon-512x512.png",
         "https://uosip312.github.io/memory-cards/assets/icons/icon-72x72.png",
-        "https://uosip312.github.io/memory-cards/assets/icons/icon-96x96.png"
+        "https://uosip312.github.io/memory-cards/assets/icons/icon-96x96.png",
+        "https://uosip312.github.io/memory-cards/favicon.ico",
+        "https://uosip312.github.io/memory-cards/index.html",
+        "https://uosip312.github.io/memory-cards/main.39177e45e3ef874c.js",
+        "https://uosip312.github.io/memory-cards/manifest.webmanifest",
+        "https://uosip312.github.io/memory-cards/polyfills.ee2ea2a7b10bd20b.js",
+        "https://uosip312.github.io/memory-cards/runtime.0800e41764e82379.js",
+        "https://uosip312.github.io/memory-cards/styles.a3e19d0ca5e9ef59.css"
       ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
     "https://uosip312.github.io/memory-cards/433.7474ea70d1dc5a96.js": "08e0db4905c53bb4d3a1f3b6bf0fb5a15bd03237",
-    "https://uosip312.github.io/memory-cards/677.500377b1d76455de.js": "92ab9369ca6101f6b6fc4d643f4ce29997407170",
+    "https://uosip312.github.io/memory-cards/677.c9b0e19f87a58ef3.js": "925dbfa0503990b6eab49f6847b5574d7ff1b915",
     "https://uosip312.github.io/memory-cards/698.f547f6f5de39a82f.js": "5283b752e8f4e9d1d750ace65ea8327245a79296",
     "https://uosip312.github.io/memory-cards/assets/favicon/android-chrome-192x192.png": "2c302588aa53cb2508b37f47550044ded8dc265c",
     "https://uosip312.github.io/memory-cards/assets/favicon/android-chrome-512x512.png": "3fa456f5106b37e8c3656bdd3fc132b2e64fb4fc",
@@ -73,16 +72,16 @@
     "https://uosip312.github.io/memory-cards/assets/icons/icon-144x144.png": "9768124b838bf98de381e08b1d07c2ba77fb1cec",
     "https://uosip312.github.io/memory-cards/assets/icons/icon-152x152.png": "1f74baaa4eb0b1a71df4fca2eb2e81c459e586c5",
     "https://uosip312.github.io/memory-cards/assets/icons/icon-192x192.png": "2c302588aa53cb2508b37f47550044ded8dc265c",
-    "https://uosip312.github.io/memory-cards/assets/icons/icon-384x384.png": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "https://uosip312.github.io/memory-cards/assets/icons/icon-384x384.png": "e8a2524b6aadd7506a83b4b59767b529903e6d2c",
     "https://uosip312.github.io/memory-cards/assets/icons/icon-512x512.png": "a64f00715b58e4a37259cc5c41e108858dba8df5",
     "https://uosip312.github.io/memory-cards/assets/icons/icon-72x72.png": "660c851d51259c0cba3c1abeaac9d556e77d9fcb",
     "https://uosip312.github.io/memory-cards/assets/icons/icon-96x96.png": "bfcfbc58372af19c143e63f8b8fda596e6b7d770",
     "https://uosip312.github.io/memory-cards/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://uosip312.github.io/memory-cards/index.html": "96b12f8e3c6064457222759557e00ce67425d3e6",
+    "https://uosip312.github.io/memory-cards/index.html": "38bd3000fac36c219a9f5e8f9733f529804b3947",
     "https://uosip312.github.io/memory-cards/main.39177e45e3ef874c.js": "749067655dc8743a484429e9b9747b9dad782226",
-    "https://uosip312.github.io/memory-cards/manifest.webmanifest": "c5246b26d5886e9e61a78d327d508baae37538d8",
+    "https://uosip312.github.io/memory-cards/manifest.webmanifest": "10d3383b42b346830006d9e04247cb6e3f8d6df8",
     "https://uosip312.github.io/memory-cards/polyfills.ee2ea2a7b10bd20b.js": "19c93570d1c5cf46bdca9f291203a33d740faff2",
-    "https://uosip312.github.io/memory-cards/runtime.5a03caccf09949f6.js": "6d7bde0dbbc1a288e9284de96a11ead297c88bf8",
+    "https://uosip312.github.io/memory-cards/runtime.0800e41764e82379.js": "5a7bbb7530bc4f0a2f27b076882ac81933bc4ad5",
     "https://uosip312.github.io/memory-cards/styles.a3e19d0ca5e9ef59.css": "f776a9feefa6b58ca3cb7726deba77bdefaffb28"
   },
   "navigationUrls": [
