@@ -55,28 +55,28 @@ describe('HomeComponent', () => {
     expect(submitButton.disabled).toBeFalsy();
   }));
 
-  // it('Debe escribir un nombre de Jugador y navegar a /game', fakeAsync(() => {
-  //   const fixture = TestBed.createComponent(HomeComponent);
-  //   const home = fixture.componentInstance;
-  //   const gameSvc = TestBed.inject(GameService);
-  //   const router = TestBed.inject(Router);
+  xit('Debe escribir un nombre de Jugador y navegar a /game', fakeAsync(() => {
+    const fixture = TestBed.createComponent(HomeComponent);
+    const home = fixture.componentInstance;
+    const gameSvc = TestBed.inject(GameService);
+    const router = TestBed.inject(Router);
 
-  //   const nombreJugador = 'Jugador Prueba';
-  //   //Simular entrada de jugador
-  //   home.jugador = nombreJugador;
+    const nombreJugador = 'Jugador Prueba';
+    //Simular entrada de jugador
+    home.jugador = nombreJugador;
 
-  //   //Click en Boton Iniciar
-  //   home.iniciar();
+    //Click en Boton Iniciar
+    home.iniciar();
 
-  //   //Verificar que el gameService tiene el nombre del jugador correcto
-  //   expect(gameSvc.nombreJugador).toEqual(nombreJugador);
+    //Verificar que el gameService tiene el nombre del jugador correcto
+    expect(gameSvc.nombreJugador).toEqual(nombreJugador);
     
-  //   //Esperar a que se completen las tareas asincronicas
-  //   fixture.whenStable().then(() => {
-  //     //Verificar que navega a /game
-  //     expect(router.url).toEqual('/game');
-  //   });
-  //   //Forzar ejecucion de tarea asincronica
-  //   tick();
-  // }));
+    //Esperar a que se completen las tareas asincronicas
+    fixture.whenStable().then(() => {
+      //Verificar que navega a /game
+      expect(router.url).toEqual('/game');
+    });
+    //Forzar ejecucion de tarea asincronica
+    tick();
+  }));
 });
