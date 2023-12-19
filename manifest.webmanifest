@@ -1,7 +1,7 @@
 {
   "name": "Memory Cards - ED",
   "short_name": "Memory Cards",
-  "theme_color": "#1976d2",
+  "theme_color": "#101d30",
   "background_color": "#101d30",
   "display": "standalone",
   "scope": "./",
