@@ -3,16 +3,17 @@
     grid-template-columns: repeat(3, 60px);
     gap: 10px;
     padding: 30px;
-    border: 5px solid #2d2de9;
-    border-radius: 25px;
+    border: 10px solid #2d2de9;
+    border-radius: 30px;
+    margin: 0px;
 }
 
 .pad-acertado {
-    border: 5px solid #00ff00 !important;
+    border: 10px solid #00ff00 !important;
 }
   
 .pad-fallado {
-    border: 5px solid #ff0000 !important;
+    border: 10px solid #ff0000 !important;
  }
 
 .numero {

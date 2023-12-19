@@ -14,6 +14,7 @@ export class GameComponent implements OnInit {
   public puntos: number = 0;
   public nivel!: Nivel;
   public tiempoRestante: number = 0;
+  public textoBoton: string = 'Jugar';
 
   constructor(
     private gameSvc: GameService
@@ -31,7 +32,12 @@ export class GameComponent implements OnInit {
     this.gameSvc.conteoRegresivo$.subscribe( tiempo => this.tiempoRestante = tiempo);
   }
 
+  numeroAcertado(acertado: boolean) {
+    this.textoBoton = (acertado) ? 'Continuar' : 'Reiniciar';
+  }
+
   public jugar() {
+    this.textoBoton = 'Jugar';
     this.gameSvc.iniciarJuego();
   }
 

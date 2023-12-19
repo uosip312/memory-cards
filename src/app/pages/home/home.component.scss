@@ -6,15 +6,16 @@
 }
 
 .form-container {
-    border: 5px solid #2d2de9;
+    // border: 5px solid #2d2de9;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
     text-align: center;
+    background-color: #101d30;
 }
 
 h2 {
-    color: #2d2de9;
+    color: #fafafa;
     margin-top: auto;
 }
 
@@ -23,6 +24,7 @@ h2 {
     margin-bottom: 8px;
     font-weight: bold;
     font-size: 1rem;
+    color: #fafafa;
 }
   
 .form-input {
@@ -35,16 +37,17 @@ h2 {
 }
 
 .submit {
-    background-color: #2d2de9;
+    background-color: #ffffff;
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 50px;
-    color: white;
+    color: #101d30;
     padding: 5px 20px;
     margin-top: 10px;
     text-align: center;
 }
 .submit:disabled {
-    background-color: #a1a1e2;
+    background-color: #909090;
     cursor: not-allowed;
+    color: white;
 }

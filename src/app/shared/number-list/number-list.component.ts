@@ -9,7 +9,7 @@ import { Nivel } from 'src/app/utils/nivel.interface';
 })
 export class NumberListComponent implements OnInit, OnChanges {
   @Input() arregloNumeros: number[] = [];
-  @Output() elegirNumeroParaAdivinar = new EventEmitter<number>();
+  @Output() numeroAcertado = new EventEmitter<boolean>();
   public indexNumeroClickeado: number | null = null;
   public numeroParaAdivinar: number | null = null;
   public mostrarNumero: boolean = true;
@@ -48,7 +48,9 @@ export class NumberListComponent implements OnInit, OnChanges {
 
   onNumeroClick(indice: number, numero: number) {
     this.indexNumeroClickeado = indice;
-    this.clasePadNumerico = (this.numeroParaAdivinar == numero) ? 'pad-acertado' : 'pad-fallado';
+    const acertado = this.numeroParaAdivinar == numero;
+    this.clasePadNumerico = (acertado) ? 'pad-acertado' : 'pad-fallado';
+    this.numeroAcertado.emit(acertado)
     this.gameSvc.calcularPuntuacion(numero);
     this.inhabilitarClick = true;
   }

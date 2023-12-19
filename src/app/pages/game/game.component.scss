@@ -11,16 +11,17 @@ h1, h2 {
     margin-top: 10px;
 }
 
-.jugar {
+.btn-jugar {
     background-color: #2d2de9;
     font-size: 1.5rem;
     cursor: pointer;
     border-radius: 50px;
     color: white;
     padding: 5px 20px;
+    font-weight: 600;
 }
 
-.jugar:disabled {
+.btn-jugar:disabled {
     background-color: #a1a1e2;
     cursor: not-allowed;
 }
@@ -44,4 +45,13 @@ h1, h2 {
 .conteo span {
     font-weight: bold;
     color: #2d2de9;
+}
+
+.btn-acertado {
+    background-color: #00ff00 !important;
+    color: #000;
+}
+
+.btn-fallido {
+    background-color: #ff0000 !important;
 }

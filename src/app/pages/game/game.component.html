@@ -10,6 +10,7 @@
     <div class="center-container">
         <app-number-list 
             [arregloNumeros]="arregloNumeros"
+            (numeroAcertado)="numeroAcertado($event)"
         ></app-number-list>
 </div>
 </div>
@@ -18,6 +19,10 @@
 </ng-template>
 
 <div class="center-container">
-    <button class="jugar" (click)="jugar()" [disabled]="!nivel">Jugar</button>
+    <button 
+        class="btn-jugar" (click)="jugar()"
+        [class.btn-acertado]="textoBoton == 'Continuar'"
+        [class.btn-fallido]="textoBoton == 'Reiniciar'"
+        [disabled]="!nivel">{{textoBoton}}</button>
 </div>
 <app-footer></app-footer>
