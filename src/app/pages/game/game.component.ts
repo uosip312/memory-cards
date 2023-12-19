@@ -36,6 +36,10 @@ export class GameComponent implements OnInit {
     this.textoBoton = (acertado) ? 'Continuar' : 'Reiniciar';
   }
 
+  nivelCambiado(cambio: boolean) {
+    if(cambio) this.textoBoton = 'Jugar';
+  }
+
   public jugar() {
     this.textoBoton = 'Jugar';
     this.gameSvc.iniciarJuego();

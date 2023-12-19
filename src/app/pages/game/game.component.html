@@ -1,4 +1,6 @@
-<app-header></app-header>
+<app-header
+    (nivelCambiado)="nivelCambiado($event)"
+></app-header>
 <h1>Memoriza los Números</h1>
 <div *ngIf="(arregloNumeros.length >= 1) else iniciarJuego">
     <p class="puntos">Puntos: <span>{{puntos}}</span></p>
